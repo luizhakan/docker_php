@@ -9,7 +9,7 @@ if ($sql) {
     $usuarios = $sql->fetchAll();
     echo "<ul>";
     foreach ($usuarios as $usuario) {
-        echo "<li>" . $usuario['nome'] . "</li>";
+        echo "<li>" . htmlentities($usuario['nome'], ENT_QUOTES, "UTF-8") . "</li>";
     }
     echo "</ul>";
 } else {
